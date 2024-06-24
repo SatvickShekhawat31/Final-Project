@@ -1,0 +1,222 @@
+{% extends "base.html" %}
+
+{% block style %}
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    {% comment %} background:
+      radial-gradient(ellipse at 20% 20%, #35234b 0%, transparent 70%),
+      radial-gradient(ellipse at 60% 20%, #2975bf 0%, transparent 70%),
+      radial-gradient(ellipse at 100% 20%, #3d54b1 0%, transparent 70%),
+      radial-gradient(ellipse at 100% 100%, #9f3c54 0%, transparent 70%),
+      radial-gradient(ellipse at 20% 100%, #362d6f 0%, transparent 70%);
+    background-blend-mode: screen; {% endcomment %}
+  }
+
+  .container1 {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .container2 {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 2px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+
+  #photo-container,
+  #video-container {
+    width: 300px;
+    height: 200px;
+    border: 2px dashed #ccc;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #photo-container {
+    background-color: #f0f0f0;
+  }
+
+  #video-container {
+    background-color: #e0e0e0;
+  }
+
+  .choose {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .choose:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+{% endblock style %}
+
+{% block body %}
+{% load static %}
+{% csrf_token %}
+      <div class="container1">
+        <h1>Submit Your Product Details</h1>
+        <form action="{% url "Input" %}" method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+
+          <label for="name1">Name:</label>
+          <input type="text" id="name1" name="name1" value="{{ name }}" required />
+          <label for="address1">Address:</label>
+          <input type="text" id="address1" name="address1" value="{{ address }}" required />
+          <label for="contact1">Contact Number:</label>
+          <input type="number" id="contact1" name="contact1" value="{{ contact }}" required />
+
+          <label for="product_name">Product Name:</label>
+          <input type="text" id="product_name" name="product_name" value="{{ product_name }}" required />
+          <label for="product_price">Product Price:</label>
+          <input type="text" id="product_price" name="product_price" value="{{ product_price }}" required />
+          <label for="product_description">Product Description:</label>
+          <textarea id="product_description" name="product_description" rows="5" required>{{ product_description }}</textarea>
+
+          <div id="photo-container" ondrop="drop(event, 'photo')" ondragover="allowDrop(event)">
+            <p>Drop Photo Here</p>
+          </div>
+          <div id="video-container" ondrop="drop(event, 'video')" ondragover="allowDrop(event)">
+            <p>Drop Video Here</p>
+          </div>
+          <div>
+            <input type="file" id="fileInput" style="display: none" accept="image/*, video/*" />
+            <button onclick="chooseFile()" class="choose">Choose File</button>
+          </div>
+
+          <br>
+
+        <input type="submit" value="Submit" />
+        </form>
+      </div>
+      <div class="container2">
+        <h1>Details Of Interested One</h1>
+        <form action="" method="post">
+          {% csrf_token %}
+          <label for="interested_name">Name:</label>
+          <input type="text" id="interested_name" name="interested_name" required />
+          <label for="interested_address">Address:</label>
+          <input type="text" id="interested_address" name="interested_address" required />
+          <label for="interested_contact">Contact Number:</label>
+          <input type="number" id="interested_contact" name="interested_contact" required />
+          <label for="interested_email">Email:</label>
+          <input type="text" id="interested_email" name="interested_email" required />
+          <label for="interested_product">Desired Product:</label>
+          <textarea id="interested_product" name="interested_product" rows="5" required></textarea>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+    {% endblock body %}
+      {% block scripts %}
+      <script>
+        function allowDrop(event) {
+          event.preventDefault();
+        }
+
+        function drop(event, type) {
+          event.preventDefault();
+          const files = event.dataTransfer.files;
+          for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            if (type === "photo" && file.type.startsWith("image")) {
+              handleFile(file, type);
+            } else if (type === "video" && file.type.startsWith("video")) {
+              handleFile(file, type);
+            } else {
+              alert(
+                "Please drop a photo into the photo container or a video into the video container."
+              );
+            }
+          }
+        }
+
+        function handleFile(file, type) {
+          const reader = new FileReader();
+          reader.onload = function (event) {
+            const container = document.getElementById(`${type}-container`);
+            container.innerHTML = `<${type === "photo" ? "img" : "video"} src="${event.target.result
+              }" style="max-width: 100%; max-height: 100%;" controls>`;
+          };
+          reader.readAsDataURL(file);
+        }
+
+        function chooseFile() {
+          document.getElementById("fileInput").click();
+        }
+
+        document
+          .getElementById("fileInput")
+          .addEventListener("change", function () {
+            const file = this.files[0];
+            const type = file.type.startsWith("image")
+              ? "photo"
+              : file.type.startsWith("video")
+                ? "video"
+                : "";
+            if (type) {
+              handleFile(file, type);
+            } else {
+              alert("Please select a valid photo or video file.");
+            }
+          });
+        </script>
+    {% endblock scripts %}

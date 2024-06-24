@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="smallcontainer cartpage">
+    <table id="cartTable">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Cart items will be dynamically inserted here -->
+        </tbody>
+    </table>
+    <div class="totalprice">
+        <table>
+            <tr>
+                <td>Subtotal</td>
+                <td id="subtotal">₹ 0</td>
+            </tr>
+        </table>
+    </div>
+</div>
+{% endblock body %}
+
+{% block script %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    var cartTableBody = document.querySelector('#cartTable tbody');
+    var subtotalElement = document.getElementById('subtotal');
+
+    if (cartTableBody && subtotalElement) {
+        cartItems.forEach(function(item, index) {
+            var row = document.createElement('tr');
+            row.innerHTML = `
+                <td>
+                    <div class="cartinfo">
+                        <img src="${item.image}" alt="${item.name}">
+                        <div>
+                            <p>${item.name}</p>
+                            <small>Price: &#8377; ${item.rentPrice}</small>
+                            <br>
+                            <a href="#" onclick="removeItem(${index}); return false;">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="number" value="${item.quantity}" onchange="updateQuantity(${index}, this.value)"></td>
+                <td>&#8377; ${item.rentPrice * item.quantity}</td>
+            `;
+            cartTableBody.appendChild(row);
+        });
+
+        var subtotal = cartItems.reduce(function(total, item) {
+            return total + (item.rentPrice * item.quantity);
+        }, 0);
+        subtotalElement.textContent = `₹ ${subtotal}`;
+    }
+
+    window.updateQuantity = function(index, quantity) {
+        var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        cartItems[index].quantity = parseInt(quantity);
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+        location.reload();
+    }
+
+    window.removeItem = function(index) {
+        var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        cartItems.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+        location.reload();
+    }
+});
+</script>
+{% endblock script %}

@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Account</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,300;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<body>
+    <div class="accountpage" padding-top: 120px, padding-bottom: 120px>
+        <div class="container">
+            <div class="row">
+                <div class="col2">
+                    <img src="{% static 'child-reading-book-upscaled.png' %}" alt="Child reading book">
+                </div>
+                <div class="col2">
+                    <div class="formcontainer">
+                        {% comment %} <div class="formbtn">
+                            <span onclick="login()">Login</span>
+                            <span onclick="register()">Register</span>
+                            <hr id="Indicator">
+                        </div> {% endcomment %}
+                        <h2> Register Page </h2>
+                        {% comment %} <form id="loginform">
+                            <input type="text" placeholder="Username">
+                            <input type="password" placeholder="Password">
+                            <button type="submit" class="btn">Login</button>
+                            <a href="">Forgot password</a>
+                        </form> {% endcomment %}
+                        <form id="regform" method="POST" action="{% url 'login' %}>
+                            {% csrf_token %}
+                            {% comment %} {{ form.as_p }} {% endcomment %}
+
+                            <label for="{{ form.username.id_for_label }}"></label>
+                            <input type="text" placeholder="Username" name="{{ form.username.name }}" value="{{ form.username.value }}">
+                            <span class="text-danger">{{ form.username.errors }}</span>
+
+                            <label for="{{ form.password.id_for_label }}"></label>
+                            <input type="password" placeholder="Password" name="{{ form.password.name }}" value="{{ form.password.value }}">
+                            <span class="text-danger">{{ form.password.errors }}</span>
+
+                            <label for="{{ form.confirmPassword.id_for_label }}"></label>
+                            <input type="password" placeholder="Confirm Password" name="{{ form.confirmPassword.name }}" value="{{ form.confirmPassword.value }}">
+                            <span class="text-danger">{{ form.confirmPassword.errors }}</span>
+
+                            <a href="login" margin-left='20px'> Login Page </a>
+                            
+                            <button type="submit" class="btn">Register</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+

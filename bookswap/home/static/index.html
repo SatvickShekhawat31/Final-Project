@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>BookSwap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,300;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html"><img src="image2.png" alt="" width="125px"></a>
+                </div>
+                <nav>
+                    <ul id="menuitems">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Books</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="account.html">Account</a></li>
+                    </ul>
+                </nav>
+                <a href="cart.html">
+                    <img src="cart.png" width="30px" height="30px">
+                    <img src="menu.png" class="menuicon" onclick="menutoggle()">
+                </a>
+            </div>
+            <div class="row">
+                <div class="col2">
+                    <h1>One's trash <br> Another's epic rebound.</h1>
+                    <p>Something considered worthless or discarded by one person can be seen as a valuable opportunity
+                        or
+                        comeback by another. </p>
+                    <a href="" class="btn">Explore Now &#8594;</a>
+                </div>
+                <div class="col2">
+                    <img src="child-reading-book-upscaled.png">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="categories">
+        <div class="smallcontainer">
+            <div class="row">
+                <div class="col3">
+                    <img src="book1.png">
+                </div>
+                <div class="col3">
+                    <img src="book2.jpeg">
+                </div>
+                <div class="col3">
+                    <img src="book3.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="smallcontainer">
+        <h2 class="title">Featured Books</h2>
+        <div class="row">
+            <div class="col4">
+                <img src="book4.jpeg">
+                <h4>The power of positive attitude</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>Orignal price: &#8377; 100</p>
+                <p>Rent price: &#8377; 30</p>
+            </div>
+            <div class="col4">
+                <img src="book5.jpg">
+                <h4>Data Strctures and Algorithms</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>Orignal price: &#8377; 675</p>
+                <p>Rent price: &#8377; 200</p>
+            </div>
+            <div class="col4">
+                <img src="book6.jpg">
+                <h4>Black Book</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>Orignal price: &#8377; 672</p>
+                <p>Rent price: &#8377; 200</p>
+            </div>
+            <div class="col4">
+                <img src="book3.jpg">
+                <h4>The richest man of Babylon</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>Orignal price: &#8377; 93</p>
+                <p>Rent price: &#8377; 30</p>
+            </div>
+        </div>
+    </div>
+    <h2 class="title">Latest Books</h2>
+    <div class="row">
+        <div class="col4">
+            <img src="book7.jpg">
+            <h4>The killer of flower moon</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>Orignal price: &#8377; 820</p>
+            <p>Rent price: &#8377; 250</p>
+        </div>
+        <div class="col4">
+            <img src="book8.webp">
+            <h4>Think like a monk</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>Orignal price: &#8377; 275</p>
+            <p>Rent price: &#8377; 80</p>
+        </div>
+        <div class="col4">
+            <a href="Shri_Ramcharitramanas.html">
+                <img src="book9.webp">
+            </a>
+            <a href="Shri_Ramcharitramanas.html">
+                <h4>Shri Ramcharitramanas</h4>
+            </a>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>Orignal price: &#8377; 600</p>
+            <p>Rent price: &#8377; 180</p>
+        </div>
+        <div class="col4">
+            <img src="book10.webp">
+            <h4>Computer Science Engineering Theory book set for Gate 2024</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>Orignal price: &#8377; 2500</p>
+            <p>Rent price: &#8377; 750</p>
+        </div>
+        <div class="col4">
+            <img src="book11.webp">
+            <h4>Gate test series for Electronics and Communication Engineering</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>Orignal price: &#8377; 290</p>
+            <p>Rent price: &#8377; 90</p>
+        </div>
+        <div class="col4">
+            <img src="book12.webp">
+            <h4>Question Bank for Electronics and Communication Engineering</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>Orignal price: &#8377; 330</p>
+            <p>Rent price: &#8377; 100</p>
+        </div>
+        <div class="col4">
+            <img src="book13.webp">
+            <h4>Black Book of English Vocabulary</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>Orignal price: &#8377; 300</p>
+            <p>Rent price: &#8377; 90</p>
+        </div>
+        <div class="col4">
+            <img src="book14.webp">
+            <h4>SSC Math Book</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>Orignal price: &#8377; 400</p>
+            <p>Rent price: &#8377; 120</p>
+        </div>
+    </div>
+    <div class="offer">
+        <div class="smallcontainer">
+            <div class="row">
+                <div class="col2">
+                    <img src="Exclusive.jpg" class="offerimg">
+                </div>
+                <div class="col2">
+                    <p>Exclusively Available on BookSwap</p>
+                    <h1>Harry Potter Box Set: The Complete Collection</h1>
+                    <small>Harry Potter is a series of seven fantasy novels written by British author J. K. Rowling. The
+                        novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and
+                        Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry.</small>
+                    <br>
+                    <a href="" class="btn">Buy Now &#8594</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="brands">
+        <div class="smallcontainer">
+            <div class="row">
+                <div class="col5">
+                    <img src="logo1.png">
+                </div>
+                <div class="col5">
+                    <img src="logo2.png">
+                </div>
+                <div class="col5">
+                    <img src="logo3.png">
+                </div>
+                <div class="col5">
+                    <img src="logo4.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footercol1">
+                    <h3>
+                        Download our App
+                    </h3>
+                    <p>Download app for Android and ios mobile phone.</p>
+                    <div class="applogo">
+                        <img src="play-store.png">
+                        <img src="app-store.png">
+                    </div>
+                </div>
+                <div class="footercol2">
+                    <img src="image2.png">
+                    <p>Our website aims to fulfill students' needs by offering books for rent at affordable prices.</p>
+                </div>
+                <div class="footercol3">
+                    <h3>Useful Links:</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footercol4">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>Instagram</li>
+                        <li>LinkedIn</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="Copyright">Copyright 2024</p>
+    </div>
+    </div>
+    <script>
+        var menuitems = document.getElementById("menuitems");
+        menuitems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (menuitems.style.maxHeight == "0px") {
+                menuitems.style.maxHeight = "200px";
+            }
+            else {
+                menuitems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+</body>
+
+</html>

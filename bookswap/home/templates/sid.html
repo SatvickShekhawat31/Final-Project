@@ -1,0 +1,359 @@
+{% extends "base.html" %}
+{% block body %}
+{% load static %}
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col2">
+                    <h1>One's trash <br> Another's epic rebound.</h1>
+                    <p>Something considered worthless or discarded by one person can be seen as a valuable opportunity
+                        or
+                        comeback by another. </p>
+                    <a href="" class="btn">Explore Now &#8594;</a>
+                </div>
+                <div class="col2">
+                    <img src="{% static "child-reading-book-upscaled.png" %}">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="categories">
+        <h2 class="title">Best Sellers</h2>
+        <div class="smallcontainer">
+            <div class="row">
+                <div class="col3">
+                    <img src="{% static "book1.png" %}">
+                    <h4>IT</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                </div>
+                <div class="col3">
+                    <img src="{% static "book2.jpeg" %}">
+                    <h4>Atomic Habits</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                </div>
+                <div class="col3">
+                    <img src="{% static "book3.jpg" %}">
+                    <h4>The Richest Man in Babylon</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="smallcontainer">
+        <h2 class="title">Featured Books</h2>
+        <div class="row">
+            <div class="col4">
+                <img src="{% static "book4.jpeg" %}">
+                <h4>The power of positive attitude</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>Orignal price: &#8377; 100</p>
+                <p>Rent price: &#8377; 30</p>
+                <a href="cart" class="btn" onclick="addToCart('Data Structures and Algorithms', 100, 30, '{% static "book4.jpg" %}')">Add to cart</a>
+            </div>
+            <div class="col4">
+                <img src="{% static 'book5.jpg' %}">
+                <h4>Data Strctures and Algorithms</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>Original price: &#8377; 675</p>
+                <p>Rent price: &#8377; 200</p>
+                <a href="cart" class="btn" onclick="addToCart('Data Structures and Algorithms', 675, 200, '{% static "book5.jpg" %}')">Add to cart</a>
+            </div>
+            <div class="col4">
+                <img src="{% static "book6.jpg" %}">
+                <h4>HTML,CSS & JavaScript</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>Orignal price: &#8377; 672</p>
+                <p>Rent price: &#8377; 200</p>
+                <a href="cart" class="btn" onclick="addToCart('Data Structures and Algorithms', 672, 200, '{% static "book6.jpg" %}')">Add to cart</a>
+            </div>
+            <div class="col4">
+                <img src="{% static "book3.jpg" %}">
+                <h4>The Richest Man in Babylon</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>Orignal price: &#8377; 93</p>
+                <p>Rent price: &#8377; 30</p>
+                <a href="cart" class="btn" onclick="addToCart('The Richest Man in Babylon', 93, 30, '{% static "book3.jpg" %}')">Add to cart</a>
+            </div>
+        </div>
+    </div>
+    <h2 class="title">Latest Books</h2>
+    <div class="row">
+        <div class="col4">
+            <img src="{% static "book7.jpg" %}">
+            <h4>The Killer of Flower Moon</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>Orignal price: &#8377; 820</p>
+            <p>Rent price: &#8377; 250</p>
+            <a href="cart" class="btn" onclick="addToCart('The Killer of Flower Moon', 820, 250, '{% static "book7.jpg" %}')">Add to cart</a>
+        </div>
+        <div class="col4">
+            <img src="{% static "book8.webp" %}">
+            <h4>Think like a monk</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i> 
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+                
+            </div>
+            <p>Orignal price: &#8377; 275</p>
+            <p>Rent price: &#8377; 80</p>
+            <a href="cart" class="btn" onclick="addToCart('Think like a monk', 275, 80, '{% static "book8.webp" %}')">Add to cart</a>
+        </div>
+        <div class="col4">
+            <a href="Ramcharitramanas">
+                <img src="{% static "book9.webp" %}">
+            </a>
+            <a href="Ramcharitramanas">
+                <h4>Shri Ramcharitramanas</h4>
+            </a>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>Orignal price: &#8377; 600</p>
+            <p>Rent price: &#8377; 180</p>
+            <a href="cart" class="btn" onclick="addToCart('Shri Ramcharitramanas', 600, 180, '{% static "book9.webp" %}')">Add to cart</a>
+        </div>
+        <div class="col4">
+            <img src="{% static "book10.webp" %}">
+            <h4>Computer Science Engineering Theory book set for GATE 2024</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>Orignal price: &#8377; 2500</p>
+            <p>Rent price: &#8377; 750</p>
+            <a href="cart" class="btn" onclick="addToCart('Computer Science Engineering Theory book set for GATE 2024', 2500, 750, '{% static "book10.webp" %}')">Add to cart</a>
+        </div>
+        <div class="col4">
+            <img src="{% static "book11.webp" %}">
+            <h4>GATE test series for Electronics and Communication Engineering</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>Orignal price: &#8377; 290</p>
+            <p>Rent price: &#8377; 90</p>
+            <a href="cart" class="btn" onclick="addToCart('GATE Test Series for Electronics and Communication Engineering', 290, 90, '{% static "book11.webp" %}')">Add to cart</a>
+        </div>
+        <div class="col4">
+            <img src="{% static "book12.webp" %}">
+            <h4>Question Bank for Electronics and Communication Engineering</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>Orignal price: &#8377; 330</p>
+            <p>Rent price: &#8377; 100</p>
+            <a href="cart" class="btn" onclick="addToCart('Question Bank for Electronics and Communication Engineering', 330, 100, '{% static "book12.webp" %}')">Add to cart</a>
+        </div>
+        <div class="col4">
+            <img src="{% static "book13.webp" %}">
+            <h4>Black Book of English Vocabulary</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>Orignal price: &#8377; 300</p>
+            <p>Rent price: &#8377; 90</p>
+            <a href="cart" class="btn" onclick="addToCart('Black Book of English Vocabulary', 300, 90, '{% static "book13.webp" %}')">Add to cart</a>
+        </div>
+        <div class="col4">
+            <img src="{% static "book14.webp" %}">
+            <h4>SSC Math Book</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>Orignal price: &#8377; 400</p>
+            <p>Rent price: &#8377; 120</p>
+            <a href="cart" class="btn" onclick="addToCart('SSC Math Book', 400, 120, '{% static "book14.webp" %}')">Add to cart</a>
+        </div>
+    </div>
+    <div class="offer">
+        <div class="smallcontainer">
+            <div class="row">
+                <div class="col2">
+                    <img src="{% static "Exclusive.jpg" %}" class="offerimg">
+                </div>
+                <div class="col2">
+                    <p>Exclusively Available on BookSwap</p>
+                    <h1>Harry Potter Box Set: The Complete Collection</h1>
+                    <small>Harry Potter is a series of seven fantasy novels written by British author J. K. Rowling. The
+                        novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and
+                        Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry.</small>
+                    <br>
+                    <p><h3>Special price: &#8377;5000</h3></p>
+                    <a href="cart" class="btn" onclick="addToCart('Harry Potter Box Set: The Complete Collection',7200 ,5000, '{% static "Exclusive.jpg" %}')">Buy Now &#8594</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="brands">
+        <div class="smallcontainer">
+            <div class="row">
+                <div class="col5">
+                    <img src="{% static "logo1.png" %}">
+                </div>
+                <div class="col5">
+                    <img src="{% static "logo2.png" %}">
+                </div>
+                <div class="col5">
+                    <img src="{% static "logo3.png" %}">
+                </div>
+                <div class="col5">
+                    <img src="{% static "logo4.png" %}">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}
+
+{% block script %}
+    <script>
+function addToCart(productName, originalPrice, rentPrice, image) {
+    var item = {
+        name: productName,
+        originalPrice: originalPrice,
+        rentPrice: rentPrice,
+        image: image // add image property to the item
+    };
+
+    // Retrieve cart from localStorage
+    var cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Check if the item already exists in the cart
+    var existingItem = cart.find(function(cartItem) {
+        return cartItem.name === item.name && cartItem.rentPrice === item.rentPrice && cartItem.image === item.image;
+    });
+
+    if (existingItem) {
+        // If the item exists, update the quantity
+        existingItem.quantity += 1;
+    } else {
+        // If the item does not exist, add it to the cart
+        item.quantity = 1;
+        cart.push(item);
+    }
+
+    // Store updated cart in localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Redirect to cart page
+    window.location.href = 'cart';
+}
+
+        var menuitems = document.getElementById("menuitems");
+        menuitems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (menuitems.style.maxHeight == "0px") {
+                menuitems.style.maxHeight = "200px";
+            }
+            else {
+                menuitems.style.maxHeight = "0px";
+            }
+        }
+        function addToCart(productName, originalPrice, rentPrice, image) {
+            var item = {
+                name: productName,
+                originalPrice: originalPrice,
+                rentPrice: rentPrice,
+                image: image // add image property to the item
+            };
+        
+            // Retrieve cart from localStorage
+            var cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+            // Check if the item already exists in the cart
+            var existingItem = cart.find(function(cartItem) {
+                return cartItem.name === item.name && cartItem.rentPrice === item.rentPrice && cartItem.image === item.image;
+            });
+        
+            if (existingItem) {
+                // If the item exists, update the quantity
+                existingItem.quantity += 1;
+            } else {
+                // If the item does not exist, add it to the cart
+                item.quantity = 1;
+                cart.push(item);
+            }
+        
+            // Store updated cart in localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+        
+            // Redirect to cart page after a short delay to ensure localStorage update
+            setTimeout(function() {
+                window.location.href = 'cart';
+            }, 100);
+        }
+        
+    </script>
+{% endblock script %}

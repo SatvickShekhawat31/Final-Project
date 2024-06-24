@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    <title>Account</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,300;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</head>
+
+{% block style %} {% endblock style %} 
+
+<body>
+    
+    <div class="gradient"></div>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="{% static "image2.png" %}" alt="" width="125px">
+            </div>
+            <nav>
+                <ul id="menuitems">
+                    <li class="navh" data-title="Home"><a href="sid">Home</a></li>
+                    {% comment %} <li class="navh" data-title="Books"><a href="products.html">Books</a></li> {% endcomment %}
+                    <li class="navh" data-title="Request"><a href="gargi">Request</a></li>
+                    <li class="navh" data-title="Contact"><a href="#">Contact</a></li>
+                    <li class="navh" data-title="Cart"><a href="cart">Cart</a></li>
+                    
+                    <!-- <li><a href="account.html">Account</a></li> -->
+                </ul>
+            </nav>
+            <a href="cart.html">
+                <!-- <img src="cart.png" width="30px" height="30px"> -->
+                <img src="menu.png" class="menuicon" onclick="menutoggle()">
+            </a>
+        </div>
+    </div>
+
+    {% block body %} {% endblock body %} 
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footercol1">
+                    <h3>
+                        Download our App
+                    </h3>
+                    <p>Download app for Android and ios mobile phone.</p>
+                    <div class="applogo">
+                        <img src="{% static "play-store.png" %}">
+                        <img src="{% static "app-store.png" %}">
+                    </div>
+                </div>
+                <div class="footercol2">
+                    <img src="{% static "image2.png" %}">
+                    <p>Our website aims to fulfill students' needs by offering books for rent at affordable prices.
+                    </p>
+                </div>
+                <div class="footercol3">
+                    <h3>Useful Links:</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footercol4">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>Instagram</li>
+                        <li>LinkedIn</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="Copyright">Copyright 2024</p>
+    </div>
+    </div>
+    
+
+    {% block scripts %} {% endblock scripts %} 
+
+</body>
+
+</html>
